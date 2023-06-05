@@ -1,3 +1,5 @@
+# personal_portfolio/urls.py
+
 """
 URL configuration for personal_portfolio project.
 
@@ -18,6 +20,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path('', include("projects.urls")),
     path('admin/', admin.site.urls),
     path("projects/", include("projects.urls")),
+path("blog/", include("blog.urls")),
 ]
