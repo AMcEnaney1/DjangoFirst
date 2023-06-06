@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 {% block page_content %}
+
+
+{% if user.is_authenticated %}
+
 <div class="col-md-8 offset-md-2">
     <h1>{{ post.title }}</h1>
     <small>
@@ -33,4 +37,9 @@
     <hr>
     {% endfor %}
 </div>
+
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a>
+{% endif %}
 {% endblock %}

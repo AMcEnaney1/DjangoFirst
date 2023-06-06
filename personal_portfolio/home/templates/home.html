@@ -203,26 +203,31 @@
       <a href="{% url 'home' %}">Home</a>
       <a href="{% url 'project_index' %}">Projects</a>
       <a href="{% url 'blog_index' %}">Blog</a>
+      {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}">Log Out</a>
+      {% else %}
+      <a href="{% url 'login' %}">Log In</a>
+      {% endif %}
     </nav>
   </header>
   <main>
     <div class="intro">
       <h1>Math Masters Student</h1>
       <p>This website serves as my portfolio for various mathematics and coding projects.</p>
-      <button>Learn More</button>
+      <button>Featured Project </button>
     </div>
     <div class="achievements">
       <div class="work">
-        <i class="fas fa-atom"></i>
+        <i class="fas fa-cog"></i>
         <p class="work-heading">Projects</p>
         <p class="work-text">As I work on projects these will published on my github and on this website under the 'projects' page, including this website itself.
         Other projects I hope to have on here include my math capstone, and some of the model I am currently working on as part of my internship.</p>
       </div>
       <div class="work">
-        <i class="fas fa-skiing"></i>
+        <i class="fas fa-paper-plane"></i>
         <p class="work-heading">Skills</p>
         <p class="work-text">I can sometimes write code and sometimes do math, as a former computer science major I have experience in most every prevalent programming
-          language and some not so prevalent programming languages such as lisp.</p>
+          language and some not so prevalent programming languages such as Lisp, though most of my programming is now done in Python.</p>
       </div>
     </div>
     <div class="about-me">

@@ -202,9 +202,14 @@
 <header class="header">
     <a href="{% url 'project_index' %}" class="logo">Aidan's Portfolio</a>
     <nav class="nav-items">
-      <a href="{% url 'home' %}">Home</a>
-      <a href="{% url 'project_index' %}">Projects</a>
-      <a href="{% url 'blog_index' %}">Blog</a>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'project_index' %}">Projects</a>
+        <a href="{% url 'blog_index' %}">Blog</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">Log Out</a>
+        {% else %}
+        <a href="{% url 'login' %}">Log In</a>
+        {% endif %}
     </nav>
   </header>
 <main>
