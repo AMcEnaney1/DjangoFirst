@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from blog.models import Post, Comment
 from .forms import CommentForm
+from crum import get_current_user
 
 def blog_index(request):
     posts = Post.objects.all().order_by('-created_on')
@@ -34,7 +35,8 @@ def blog_detail(request, pk):
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = Comment(
-                author=form.cleaned_data["author"],
+                #author=form.cleaned_data["author"],
+                author = get_current_user(),
                 body=form.cleaned_data["body"],
                 post=post
             )

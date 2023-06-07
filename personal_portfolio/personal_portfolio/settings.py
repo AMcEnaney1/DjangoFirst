@@ -62,6 +62,7 @@ MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'crum.CurrentRequestUserMiddleware',
 ]
 
 ROOT_URLCONF = "personal_portfolio.urls"
@@ -139,8 +140,8 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = "notmyrealemail"
-EMAIL_HOST_PASSWORD = "password"
+EMAIL_HOST_USER = "dajsdhsd"
+EMAIL_HOST_PASSWORD = "dsada"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
